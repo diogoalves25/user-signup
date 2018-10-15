@@ -10,7 +10,7 @@ app.config['DEBUG'] = True
 
 @app.route('/signup')
 def display_user_signup_form():
-    return render_template('main.html')
+    return render_template('home.html')
 
 # FUNCTIONS FOR CORRECT INPUT
 
@@ -44,7 +44,7 @@ def email_period(x):
     else:
         return False
 
-def Multiple_period(x):
+def multiple_period(x):
     if x.count('.') <= 1:
         return True
     else:
@@ -175,7 +175,7 @@ def user_signup_complete():
         username = username
         return redirect('/welcome?username={0}'.format(username))
     else:
-        return render_template('main.html', username_error=username_error, username=username, password_error=password_error, password=password, password_validate_error=password_validate_error, password_validate=password_validate, email_error=email_error, email=email)
+        return render_template('home.html', username_error=username_error, username=username, password_error=password_error, password=password, password_validate_error=password_validate_error, password_validate=password_validate, email_error=email_error, email=email)
 
 # DWELCOME PAGE
 
